@@ -6,6 +6,7 @@
 *.log
 *.pot
 *.pyc
+*.db
 __pycache__/
 local_settings.py
 db.sqlite3
@@ -72,6 +73,7 @@ pytestdebug.log
 
 # Translations
 *.mo
+*.pot
 
 # Django stuff:
 
@@ -152,3 +154,7 @@ dmypy.json
 migrations
 docs
 Pipfile.lock
+connection.py
+settings.py
+.pylintrc
+
