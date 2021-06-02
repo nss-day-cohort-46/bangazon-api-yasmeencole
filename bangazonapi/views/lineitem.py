@@ -13,7 +13,7 @@ class LineItemSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = OrderProduct
         url = serializers.HyperlinkedIdentityField(
-            view_name='lineitem',
+            view_name='line_item',
             lookup_field='id'
         )
         fields = ('id', 'url', 'order', 'product')
