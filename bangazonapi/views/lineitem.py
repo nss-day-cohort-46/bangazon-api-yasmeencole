@@ -13,7 +13,7 @@ class LineItemSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = OrderProduct
         url = serializers.HyperlinkedIdentityField(
-            view_name='line_item',
+            view_name='lineitem',
             lookup_field='id'
         )
         fields = ('id', 'url', 'order', 'product')
@@ -51,9 +51,9 @@ class LineItems(ViewSet):
         try:
             # line_item = OrderProduct.objects.get(pk=pk)
             customer = Customer.objects.get(user=request.auth.user)
-            line_item = OrderProduct.objects.get(pk=pk, order__customer=customer)
+            lineitem = OrderProduct.objects.get(pk=pk, order__customer=customer)
 
-            serializer = LineItemSerializer(line_item, context={'request': request})
+            serializer = LineItemSerializer(lineitem, context={'request': request})
 
             return Response(serializer.data)
 
